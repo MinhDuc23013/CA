@@ -1,0 +1,397 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dangm\\source\\repos\\CA.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\external\\notifications\\emailnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\external\\notifications\\emailnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\interfaces\\iloanapplicationappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\interfaces\\iloanapplicationappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\dispatchers\\idomaineventdispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\dispatchers\\idomaineventdispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\eventhandler\\loanapplicationcreatedhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\eventhandler\\loanapplicationcreatedhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\abstracts\\idomaineventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\abstracts\\idomaineventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\ca.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\ca.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\aggregates\\loanapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\aggregates\\loanapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\domainevents\\loanapplicationcreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\domainevents\\loanapplicationcreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\services\\loanapplicationappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\services\\loanapplicationappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\irepositories\\iloanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\irepositories\\iloanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\repository\\loanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\repository\\loanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.application\\command\\createloanapplicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39B04AC4-2EBF-4430-ADEF-106F5346081D}|CA.Application\\CA.Application.csproj|solutionrelative:ca.application\\command\\createloanapplicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\seedword\\aggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\seedword\\aggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\enums\\loanstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\enums\\loanstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\abstractions\\idomainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\abstractions\\idomainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EB8D0B0-2514-4D03-86BE-27CF58BDE9D4}|CA.API\\CA.API.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.api\\controllers\\loanapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EB8D0B0-2514-4D03-86BE-27CF58BDE9D4}|CA.API\\CA.API.csproj|solutionrelative:ca.api\\controllers\\loanapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\implementation\\domaineventdispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\implementation\\domaineventdispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\ca.infrastructures.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\ca.infrastructures.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.infrastructures\\implementation\\efunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B070B751-1C8A-4F01-A4D1-79E5CD2AC509}|CA.Infrastructures\\CA.Infrastructures.csproj|solutionrelative:ca.infrastructures\\implementation\\efunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|c:\\users\\dangm\\source\\repos\\ca.api\\ca.domain\\loanapplications\\valueobjects\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C31825BC-2D2F-42FA-A213-E22D85164DEF}|CA.Domain\\CA.Domain.csproj|solutionrelative:ca.domain\\loanapplications\\valueobjects\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 250,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Interfaces\\INotificationService.cs",
+              "RelativeDocumentMoniker": "CA.Application\\Interfaces\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Interfaces\\INotificationService.cs",
+              "RelativeToolTip": "CA.Application\\Interfaces\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T14:26:24.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailNotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\External\\Notifications\\EmailNotificationService.cs",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\External\\Notifications\\EmailNotificationService.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\External\\Notifications\\EmailNotificationService.cs",
+              "RelativeToolTip": "CA.Infrastructures\\External\\Notifications\\EmailNotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T14:25:04.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDomainEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Abstracts\\IDomainEventHandler.cs",
+              "RelativeDocumentMoniker": "CA.Application\\Abstracts\\IDomainEventHandler.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Abstracts\\IDomainEventHandler.cs",
+              "RelativeToolTip": "CA.Application\\Abstracts\\IDomainEventHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T14:22:59.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoanApplicationCreatedHandler.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\EventHandler\\LoanApplicationCreatedHandler.cs",
+              "RelativeDocumentMoniker": "CA.Application\\EventHandler\\LoanApplicationCreatedHandler.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\EventHandler\\LoanApplicationCreatedHandler.cs",
+              "RelativeToolTip": "CA.Application\\EventHandler\\LoanApplicationCreatedHandler.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwBcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T14:20:30.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoanApplicationAppService.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Services\\LoanApplicationAppService.cs",
+              "RelativeDocumentMoniker": "CA.Application\\Services\\LoanApplicationAppService.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Services\\LoanApplicationAppService.cs",
+              "RelativeToolTip": "CA.Application\\Services\\LoanApplicationAppService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T14:01:01.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ILoanApplicationAppService.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Interfaces\\ILoanApplicationAppService.cs",
+              "RelativeDocumentMoniker": "CA.Application\\Interfaces\\ILoanApplicationAppService.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Interfaces\\ILoanApplicationAppService.cs",
+              "RelativeToolTip": "CA.Application\\Interfaces\\ILoanApplicationAppService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T13:59:15.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateLoanApplicationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Command\\CreateLoanApplicationCommand.cs",
+              "RelativeDocumentMoniker": "CA.Application\\Command\\CreateLoanApplicationCommand.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\Command\\CreateLoanApplicationCommand.cs",
+              "RelativeToolTip": "CA.Application\\Command\\CreateLoanApplicationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T13:58:29.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CA.Application",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\CA.Application.csproj",
+              "RelativeDocumentMoniker": "CA.Application\\CA.Application.csproj",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Application\\CA.Application.csproj",
+              "RelativeToolTip": "CA.Application\\CA.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-19T13:54:53.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DomainEventDispatcher.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Implementation\\DomainEventDispatcher.cs",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\Implementation\\DomainEventDispatcher.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Implementation\\DomainEventDispatcher.cs",
+              "RelativeToolTip": "CA.Infrastructures\\Implementation\\DomainEventDispatcher.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswBYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T16:26:43.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDomainEventDispatcher.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Dispatchers\\IDomainEventDispatcher.cs",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\Dispatchers\\IDomainEventDispatcher.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Dispatchers\\IDomainEventDispatcher.cs",
+              "RelativeToolTip": "CA.Infrastructures\\Dispatchers\\IDomainEventDispatcher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T16:26:14.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EfUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Implementation\\EfUnitOfWork.cs",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\Implementation\\EfUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Implementation\\EfUnitOfWork.cs",
+              "RelativeToolTip": "CA.Infrastructures\\Implementation\\EfUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T16:23:18.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CA.Infrastructures.csproj",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\CA.Infrastructures.csproj",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\CA.Infrastructures.csproj",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\CA.Infrastructures.csproj",
+              "RelativeToolTip": "CA.Infrastructures\\CA.Infrastructures.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-18T16:22:51.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoanApplicationCreatedEvent.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\DomainEvents\\LoanApplicationCreatedEvent.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\DomainEvents\\LoanApplicationCreatedEvent.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\DomainEvents\\LoanApplicationCreatedEvent.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\DomainEvents\\LoanApplicationCreatedEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:33:52.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoanApplication.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\Aggregates\\LoanApplication.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\Aggregates\\LoanApplication.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\Aggregates\\LoanApplication.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\Aggregates\\LoanApplication.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA9wBAAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:08:33.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AggregateRoot.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\SeedWord\\AggregateRoot.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\SeedWord\\AggregateRoot.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\SeedWord\\AggregateRoot.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\SeedWord\\AggregateRoot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T13:43:50.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "CA.Infrastructures\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:26:04.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoanApplicationController.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.API\\Controllers\\LoanApplicationController.cs",
+              "RelativeDocumentMoniker": "CA.API\\Controllers\\LoanApplicationController.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.API\\Controllers\\LoanApplicationController.cs",
+              "RelativeToolTip": "CA.API\\Controllers\\LoanApplicationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:30:01.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Money.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\ValueObjects\\Money.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\ValueObjects\\Money.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\ValueObjects\\Money.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\ValueObjects\\Money.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:29:12.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoanApplicationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Repository\\LoanApplicationRepository.cs",
+              "RelativeDocumentMoniker": "CA.Infrastructures\\Repository\\LoanApplicationRepository.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Infrastructures\\Repository\\LoanApplicationRepository.cs",
+              "RelativeToolTip": "CA.Infrastructures\\Repository\\LoanApplicationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:10:43.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IDomainEvent.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\Abstractions\\IDomainEvent.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\Abstractions\\IDomainEvent.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\Abstractions\\IDomainEvent.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\Abstractions\\IDomainEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:27:40.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ILoanApplicationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\IRepositories\\ILoanApplicationRepository.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\IRepositories\\ILoanApplicationRepository.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\IRepositories\\ILoanApplicationRepository.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\IRepositories\\ILoanApplicationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:05:54.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoanStatus.cs",
+              "DocumentMoniker": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\Enums\\LoanStatus.cs",
+              "RelativeDocumentMoniker": "CA.Domain\\LoanApplications\\Enums\\LoanStatus.cs",
+              "ToolTip": "C:\\Users\\dangm\\source\\repos\\CA.API\\CA.Domain\\LoanApplications\\Enums\\LoanStatus.cs",
+              "RelativeToolTip": "CA.Domain\\LoanApplications\\Enums\\LoanStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T14:16:59.983Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
