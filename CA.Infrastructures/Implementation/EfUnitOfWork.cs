@@ -1,4 +1,5 @@
-﻿using CA.Application.Interfaces;
+﻿using CA.Application.Abstractions;
+using CA.Application.Interfaces;
 using CA.Infrastructures.Persistence;
 
 namespace CA.Infrastructures.Implementation
@@ -12,7 +13,7 @@ namespace CA.Infrastructures.Implementation
             _dbContext = dbContext;
         }
 
-        public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
+        public async Task CommitAsync(CancellationToken cancellationToken = default)
         {
             await _dbContext.SaveChangesAsync(cancellationToken);
         }

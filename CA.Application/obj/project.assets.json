@@ -3856,7 +3856,9 @@
           }
         },
         "centralPackageVersions": {
+          "Confluent.Kafka": "2.11.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.0",
+          "RabbitMQ.Client": "7.0.0",
           "Swashbuckle.AspNetCore": "6.6.2",
           "Volo.Abp.Data": "8.0.0"
         },

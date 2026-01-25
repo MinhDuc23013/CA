@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CA.Application.Interfaces;
+using CA.Application.Interfaces.DTOs;
+using CA.Application.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CA.API.Controllers
 {
@@ -6,20 +9,28 @@ namespace CA.API.Controllers
     [Route("api/loan-application")]
     public class LoanApplicationController : ControllerBase
     {
-        public LoanApplicationController()
-        {
+        private readonly ILoanApplicationService _createService;
 
+        public LoanApplicationController(
+            ILoanApplicationService createService)
+        {
+            _createService = createService;
         }
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetById(Guid id)
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateLoanApplicationRequest request)
         {
-            var result = await _getLoanApplicationHandler.Handle(
-                new GetLoanApplicationByIdQuery(id));
+            var response = await _createService.CreateAsync(request);
+            return Ok(response);
+        }
 
-            if (result == null)
-                return NotFound();
-
-            return Ok(result);
+        [HttpGet("{id:guid}")]
+        public IActionResult GetById(Guid id)
+        {
+            return Ok(new
+            {
+                LoanApplicationId = id
+            });
         }
     }
 }
