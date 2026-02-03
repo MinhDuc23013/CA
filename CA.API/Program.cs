@@ -1,11 +1,16 @@
 using CA.API.Middlewares;
 using CA.Application.Abstractions;
+using CA.Application.Abstractions.DTO;
 using CA.Application.DomainEvents.Handler;
 using CA.Application.Interfaces;
 using CA.Application.Services;
 using CA.Domain.Events;
 using CA.Domain.IRepositories;
 using CA.Infrastructures.EventBus;
+using CA.Infrastructures.EventBus.Kafka;
+using CA.Infrastructures.EventBus.RabbiqMq;
+using CA.Infrastructures.EventBus.RabbiqMq.DTO;
+using CA.Infrastructures.External.Email;
 using CA.Infrastructures.Persistence;
 using CA.Infrastructures.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +36,19 @@ builder.Services.AddScoped<IInMemoryDomainEventBus, InMemoryDomainEventBus>();
 
 builder.Services.AddScoped<IDomainEventHandler<LoanApplicationCreatedDomainEvent>, LoanCreatedAuditHandler>();
 builder.Services.AddScoped<IUnitOfWork, EfUnitOfWork>();
+
+
+builder.Services.AddSingleton<RabbitMqMessageQueue>();
+builder.Services.AddSingleton<KafkaMessageQueue>();
+
+builder.Services.AddSingleton<IMessageQueue, MessageQueue>();
+
+
+builder.Services.Configure<RabbitMqOptions>(
+    builder.Configuration.GetSection("RabbitMq"));
+
+builder.Services.Configure<KafkaOptions>(
+    builder.Configuration.GetSection("Kafka"));
 
 
 var app = builder.Build();

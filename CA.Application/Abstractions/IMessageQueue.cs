@@ -9,14 +9,11 @@ namespace CA.Application.Abstractions
 {
     public interface IMessageQueue
     {
-        Task PublishAsync<TEvent>(TEvent @event, CancellationToken cancellationToken = default)
-            where TEvent : class;
-
-        Task SubscribeAsync<TEvent>(
-            string subscriptionName,
-            Func<TEvent, CancellationToken, Task> handler,
+        Task PublishAsync<T>(
+            string topic,
+            T message,
             CancellationToken cancellationToken = default)
-            where TEvent : class;
+            where T : class;
     }
 
 

@@ -1,13 +1,12 @@
 ﻿using CA.Application.Abstractions;
+using CA.Infrastructures.EventBus;
 
 namespace CA.Infrastructures.External.Email
 {
-    public sealed class SmtpEmailService : IEmailService
+    public class SmtpEmailService : IEmailService
     {
-        public Task SendAsync(string to, string subject, string body)
+        public async Task SendAsync(string to, string subject, string body)
         {
-            // SMTP / SendGrid / SES
-            return Task.CompletedTask;
         }
     }
 
