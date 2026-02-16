@@ -5,7 +5,7 @@ using Confluent.Kafka;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 
-namespace CA.Infrastructures.EventBus.Kafka
+namespace CA.Infrastructures.MessageBroker.Kafka
 {
     public sealed class KafkaMessageQueue : IDisposable
     {
@@ -51,7 +51,7 @@ namespace CA.Infrastructures.EventBus.Kafka
             catch (ProduceException<string, string> ex)
             {
                 // log ở đây
-                throw;
+                throw ex;
             }
         }
 

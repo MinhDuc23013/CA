@@ -22,6 +22,8 @@ namespace CA.Infrastructures.Persistence
         //public DbSet<Disbursement> Disbursements { get; set; }
 
         public DbSet<SystemExceptionLog> SystemExceptionLogs { get; set; }
+        public DbSet<OutboxMessage> OutboxMessages { get; set; }
+        public DbSet<ApiIdempotency> ApiIdempotencies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,27 +51,15 @@ namespace CA.Infrastructures.Persistence
                     .HasColumnName("term_in_months")
                     .IsRequired();
 
+                entity.Property(x => x.IdempotencyKey)
+                    .HasColumnName("idempotency_key");
+
                 entity.Property(x => x.Status)
                     .HasColumnName("status")
-                    .HasConversion<string>()   // enum → string
+                    .HasConversion<string>()
                     .HasMaxLength(20)
                     .IsRequired();
-
-                // Configure the backing field "_disbursements" as a collection navigation
-                //entity.HasMany<Disbursement>("_disbursements")
-                //      .WithOne()
-                //      .HasForeignKey("LoanApplicationId")
-                //      .OnDelete(DeleteBehavior.Cascade);
-
-                //entity.Navigation("_disbursements")
-                //      .UsePropertyAccessMode(PropertyAccessMode.Field);
             });
-
-            //modelBuilder.Entity<Disbursement>(entity =>
-            //{
-            //    entity.ToTable("Disbursement");
-            //    entity.HasKey(e => e.Id);
-            //});
 
 
             modelBuilder.Entity<SystemExceptionLog>(builder =>
@@ -80,7 +70,7 @@ namespace CA.Infrastructures.Persistence
 
                 builder.Property(x => x.Id)
                     .HasColumnName("id")
-                    .UseIdentityAlwaysColumn(); // BIGSERIAL
+                    .UseIdentityAlwaysColumn();
 
                 builder.Property(x => x.ApplicationName)
                     .HasColumnName("application_name")
@@ -110,6 +100,49 @@ namespace CA.Infrastructures.Persistence
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .IsRequired();
+            });
+
+            modelBuilder.Entity<OutboxMessage>(b =>
+            {
+                b.ToTable("outbox_messages");
+                b.HasKey(x => x.Id);
+
+                b.HasIndex(x => x.PublishedAt);
+            });
+
+            modelBuilder.Entity<ApiIdempotency>(entity =>
+            {
+                entity.ToTable("api_idempotency");
+
+                entity.HasKey(e => e.IdempotencyKey);
+
+                entity.Property(e => e.IdempotencyKey)
+                      .HasColumnName("idempotency_key");
+
+                entity.Property(e => e.RequestHash)
+                      .HasColumnName("request_hash")
+                      .IsRequired();
+
+                entity.Property(e => e.Status)
+                      .HasColumnName("status")
+                      .IsRequired();
+
+                entity.Property(e => e.ResponseBody)
+                      .HasColumnName("response_body")
+                      .HasColumnType("jsonb");
+
+                entity.Property(e => e.HttpStatus)
+                      .HasColumnName("http_status");
+
+                entity.Property(e => e.CreatedAt)
+                      .HasColumnName("created_at")
+                      .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.ExpiresAt)
+                      .HasColumnName("expires_at");
+
+                entity.HasIndex(e => e.ExpiresAt)
+                      .HasDatabaseName("idx_api_idempotency_expires");
             });
 
         }

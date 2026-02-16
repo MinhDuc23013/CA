@@ -1,21 +1,15 @@
 ﻿using CA.Application.Abstractions;
 using CA.Application.Abstractions.DTO;
-using CA.Infrastructures.EventBus.Kafka;
-using CA.Infrastructures.EventBus.RabbiqMq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CA.Infrastructures.MessageBroker.RabbiqMq;
 
 namespace CA.Infrastructures.EventBus
 {
-    public sealed class MessageQueue : IMessageQueue
+    public sealed class MessageBroker : IMessageQueue
     {
         private readonly RabbitMqMessageQueue _rabbit;
         //private readonly KafkaMessageQueue _kafka;
 
-        public MessageQueue(RabbitMqMessageQueue rabbit
+        public MessageBroker(RabbitMqMessageQueue rabbit
             //KafkaMessageQueue kafka
             )
         {

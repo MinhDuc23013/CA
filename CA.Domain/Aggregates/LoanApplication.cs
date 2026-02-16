@@ -15,25 +15,29 @@ namespace CA.Domain.Aggregates
         public string CIF { get; private set; } = string.Empty;
         public decimal RequestedAmount { get; private set; }
         public int TermInMonths { get; private set; }
+        public Guid IdempotencyKey { get; private set; }
         public LoanStatus Status { get; private set; }
 
         private LoanApplication() { } // For ORM
 
-        private LoanApplication(string cif, decimal amount, int term)
+        private LoanApplication(string cif, decimal amount, int term, Guid idempotencyKey)
         {
             Id = Guid.NewGuid();
             CIF = cif;
             RequestedAmount = amount;
             TermInMonths = term;
             Status = LoanStatus.Draft;
+            IdempotencyKey = idempotencyKey;
 
             AddDomainEvent(new LoanApplicationCreatedDomainEvent(Id, CIF));
+            IdempotencyKey = idempotencyKey;
         }
 
         public static LoanApplication Create(
             string CIF,
             decimal amount,
-            int term)
+            int term,
+            Guid idempotencyKey)
         {
             if (amount < 0)
                 throw new DomainException("Amount cannot be negative.");
@@ -41,7 +45,7 @@ namespace CA.Domain.Aggregates
             if (term <= 0)
                 throw new DomainException("Loan term must be greater than zero.");
 
-            return new LoanApplication(CIF, amount, term);
+            return new LoanApplication(CIF, amount, term, idempotencyKey);
         }
 
         public void Submit()

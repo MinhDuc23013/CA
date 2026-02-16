@@ -7,11 +7,12 @@ using CA.Application.Services;
 using CA.Domain.Events;
 using CA.Domain.IRepositories;
 using CA.Infrastructures.EventBus;
-using CA.Infrastructures.EventBus.Kafka;
-using CA.Infrastructures.EventBus.RabbiqMq;
 using CA.Infrastructures.EventBus.RabbiqMq.DTO;
-using CA.Infrastructures.External.Email;
+using CA.Infrastructures.MessageBroker.Kafka;
+using CA.Infrastructures.MessageBroker.RabbiqMq;
+using CA.Infrastructures.OutboxEvent;
 using CA.Infrastructures.Persistence;
+using CA.Infrastructures.Persistence.Interfaces;
 using CA.Infrastructures.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,12 +37,15 @@ builder.Services.AddScoped<IInMemoryDomainEventBus, InMemoryDomainEventBus>();
 
 builder.Services.AddScoped<IDomainEventHandler<LoanApplicationCreatedDomainEvent>, LoanCreatedAuditHandler>();
 builder.Services.AddScoped<IUnitOfWork, EfUnitOfWork>();
+builder.Services.AddScoped<IOutboxRepository, OutboxRepository>();
+builder.Services.AddScoped<IIntegrationEventPublisher, OutboxEventPublisher>();
+builder.Services.AddScoped<IApiIdempotencyRepository, ApiIdempotencyRepository>();
 
 
 builder.Services.AddSingleton<RabbitMqMessageQueue>();
 builder.Services.AddSingleton<KafkaMessageQueue>();
 
-builder.Services.AddSingleton<IMessageQueue, MessageQueue>();
+builder.Services.AddSingleton<IMessageQueue, MessageBroker>();
 
 
 builder.Services.Configure<RabbitMqOptions>(

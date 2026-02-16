@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Channels;
 
-namespace CA.Infrastructures.EventBus.RabbiqMq
+namespace CA.Infrastructures.MessageBroker.RabbiqMq
 {
     public sealed class RabbitMqMessageQueue : IDisposable
     {

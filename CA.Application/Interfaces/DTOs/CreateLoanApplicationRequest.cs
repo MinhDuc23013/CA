@@ -12,5 +12,6 @@ namespace CA.Application.Interfaces.DTOs
         public decimal Amount { get; set; }
         public string Currency { get; set; } = "VND";
         public int TermMonths { get; set; }
+        public Guid IdempotencyKey { get; set; }
     }
 }
