@@ -1,4 +1,4 @@
-using CA.API.Middlewares;
+﻿using CA.API.Middlewares;
 using CA.Application.Abstractions;
 using CA.Application.Abstractions.DTO;
 using CA.Application.DomainEvents.Handler;
@@ -15,8 +15,54 @@ using CA.Infrastructures.Persistence;
 using CA.Infrastructures.Persistence.Interfaces;
 using CA.Infrastructures.Repository;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using OpenTelemetry;
+using OpenTelemetry.Exporter;
+using OpenTelemetry.Extensions.Hosting;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using System.Diagnostics;
+
+var serviceName = "loan-service";
+//var serviceVersion = "1.0.0";
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+var endpoint = builder.Configuration["Otel:Endpoint"]
+               ?? "http://localhost:4318";
+
+Console.WriteLine("OTEL ENDPOINT = " + endpoint);
+
+builder.Logging.AddOpenTelemetry(x =>
+{
+    x.IncludeFormattedMessage = true;
+    x.IncludeScopes = true;
+});
+
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resource => resource
+        .AddService(serviceName: "loan-service"))
+    .WithTracing(tracing => tracing
+        .SetSampler(new AlwaysOnSampler())
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+        .AddSource("loan-service")
+        .AddOtlpExporter(opt =>
+        {
+            opt.Endpoint = new Uri(endpoint);
+            opt.Protocol = OtlpExportProtocol.HttpProtobuf;
+            //opt.ExportProcessorType = ExportProcessorType.Batch;
+            opt.HttpClientFactory = () =>
+            {
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback =
+                    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                return new HttpClient(handler);
+            };
+        })
+     );
 
 // Add services to the container.
 
@@ -71,5 +117,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//app.MapGet("/trace-test", () => "trace created");
 
 app.Run();

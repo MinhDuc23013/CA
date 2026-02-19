@@ -1,11 +1,4 @@
-﻿using CA.Infrastructures.Persistence.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CA.Infrastructures.Persistence
+﻿namespace CA.Infrastructures.Persistence
 {
     public class ApiIdempotency
     {
