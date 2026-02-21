@@ -22,24 +22,39 @@ using OpenTelemetry.Extensions.Hosting;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using Serilog;
+using Serilog.Context;
+using Serilog.Sinks.Grafana.Loki;
 using System.Diagnostics;
 
 var serviceName = "loan-service";
 //var serviceVersion = "1.0.0";
 
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.GrafanaLoki(
+        "http://localhost:3100",
+        labels: new[]
+        {
+            new LokiLabel { Key = "service", Value = "loan-service" }
+        })
+    .CreateLogger();
+
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog();
 
-var endpoint = builder.Configuration["Otel:Endpoint"]
+var endpointTracing = builder.Configuration["Otel:EndpointTracing"]
                ?? "http://localhost:4318";
 
-Console.WriteLine("OTEL ENDPOINT = " + endpoint);
+var endpointMetric = builder.Configuration["Otel:EndpointMetric"]
+               ?? "http://localhost:4318";
 
-builder.Logging.AddOpenTelemetry(x =>
-{
-    x.IncludeFormattedMessage = true;
-    x.IncludeScopes = true;
-});
+Console.WriteLine("OTEL ENDPOINT TRACING = " + endpointTracing);
+Console.WriteLine("OTEL ENDPOINT METRIC = " + endpointMetric);
 
 builder.Services.AddOpenTelemetry()
     .ConfigureResource(resource => resource
@@ -51,9 +66,9 @@ builder.Services.AddOpenTelemetry()
         .AddSource("loan-service")
         .AddOtlpExporter(opt =>
         {
-            opt.Endpoint = new Uri(endpoint);
+            opt.Endpoint = new Uri(endpointTracing);
             opt.Protocol = OtlpExportProtocol.HttpProtobuf;
-            //opt.ExportProcessorType = ExportProcessorType.Batch;
+            opt.ExportProcessorType = ExportProcessorType.Batch;
             opt.HttpClientFactory = () =>
             {
                 var handler = new HttpClientHandler();
@@ -62,7 +77,27 @@ builder.Services.AddOpenTelemetry()
                 return new HttpClient(handler);
             };
         })
-     );
+     )
+    .WithMetrics(metrics =>
+    {
+        metrics
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddRuntimeInstrumentation()
+            .AddOtlpExporter(opt =>
+            {
+                opt.Endpoint = new Uri(endpointMetric);
+                opt.Protocol = OtlpExportProtocol.HttpProtobuf;
+                opt.ExportProcessorType = ExportProcessorType.Batch;
+                opt.HttpClientFactory = () =>
+                {
+                    var handler = new HttpClientHandler();
+                    handler.ServerCertificateCustomValidationCallback =
+                        HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                    return new HttpClient(handler);
+                };
+            });
+    });
 
 // Add services to the container.
 
@@ -118,6 +153,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.MapGet("/trace-test", () => "trace created");
+
+app.Use(async (context, next) =>
+{
+    using (LogContext.PushProperty("TraceId", Activity.Current?.TraceId))
+    using (LogContext.PushProperty("RequestId", context.TraceIdentifier))
+    {
+        await next();
+    }
+});
 
 app.Run();

@@ -45,43 +45,54 @@ namespace CA.Application.Services
 
         public async Task<CreateLoanApplicationResponse> CreateAsync(CreateLoanApplicationRequest request)
         {
-
             using var activity = Telemetry.Source.StartActivity("loan.create");
+
+            using var scope = _logger.BeginScope(new Dictionary<string, object>
+            {
+                ["IdempotencyKey"] = request.IdempotencyKey,
+                ["TraceId"] = Activity.Current?.TraceId.ToString()
+            });
 
             try
             {
-
                 activity?.SetTag("loan.cif", request.CIF);
                 activity?.SetTag("loan.amount", request.Amount);
                 activity?.SetTag("loan.term_months", request.TermMonths);
                 activity?.SetTag("idempotency.key", request.IdempotencyKey);
 
-                _logger.LogInformation("Start creating loan for CIF {CIF}", request.CIF);
+                _logger.LogInformation("Start creating loan");
 
                 var requestJson = JsonSerializer.Serialize(request);
                 var requestHash = _idempotencyRepo.HashRequest(requestJson);
 
                 await _unitOfWork.BeginTransactionAsync();
 
-                using (Telemetry.Source.StartActivity("idempotency.check"))
+                using (Telemetry.Source.StartActivity("idempotency.try_start"))
                 {
                     var (isFirstRequest, record) =
-                        await _idempotencyRepo.TryStartRequestAsync(request.IdempotencyKey, requestHash);
+                        await _idempotencyRepo.TryStartRequestAsync(
+                            request.IdempotencyKey,
+                            requestHash);
 
                     if (!isFirstRequest)
                     {
+                        _logger.LogWarning(
+                            "Idempotency duplicate detected. Status={Status}",
+                            record?.Status);
+
                         if (record!.RequestHash != requestHash)
                             throw new Exception("Idempotency key reused with different payload");
 
                         if (record.Status == "SUCCESS")
                         {
                             var cachedResponse =
-                                JsonSerializer.Deserialize<CreateLoanApplicationResponse>(record.ResponseBody!);
+                                JsonSerializer.Deserialize<CreateLoanApplicationResponse>(
+                                    record.ResponseBody!);
 
                             if (cachedResponse is null)
-                                throw new Exception("Cached response could not be deserialized");
+                                throw new Exception("Cached response invalid");
 
-                            _logger.LogInformation("Return cached response for key {Key}", request.IdempotencyKey);
+                            _logger.LogInformation("Return cached response");
                             return cachedResponse;
                         }
 
@@ -104,13 +115,17 @@ namespace CA.Application.Services
 
                 activity?.SetTag("loan.id", loan.Id);
 
+                using var loanScope = _logger.BeginScope(new Dictionary<string, object>
+                {
+                    ["LoanId"] = loan.Id
+                });
 
                 using (Telemetry.Source.StartActivity("db.save-loan"))
                 {
                     await _repository.AddAsync(loan);
                 }
 
-                _logger.LogInformation("Loan {LoanId} created", loan.Id);
+                _logger.LogInformation("Loan entity created");
 
                 using (Telemetry.Source.StartActivity("integration.email-service"))
                 {
@@ -125,7 +140,7 @@ namespace CA.Application.Services
                         "email-service");
                 }
 
-                using (Telemetry.Source.StartActivity("db.commit-transaction"))
+                using (Telemetry.Source.StartActivity("db.commit"))
                 {
                     await _unitOfWork.CommitAsync();
                 }
@@ -144,9 +159,11 @@ namespace CA.Application.Services
                         request.IdempotencyKey,
                         responseJson,
                         200);
+
+                    _logger.LogInformation("Idempotency marked SUCCESS");
                 }
 
-                _logger.LogInformation("Loan {LoanId} completed successfully", loan.Id);
+                _logger.LogInformation("Loan created successfully");
 
                 return response;
             }
@@ -155,14 +172,12 @@ namespace CA.Application.Services
                 activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
                 activity?.RecordException(ex);
 
-                _logger.LogError(ex,
-                    "Create loan failed for CIF {CIF} with key {Key}",
-                    request.CIF,
-                    request.IdempotencyKey);
+                _logger.LogError(ex, "Create loan failed");
 
                 using (Telemetry.Source.StartActivity("idempotency.fail"))
                 {
                     await _idempotencyRepo.FailRequestAsync(request.IdempotencyKey);
+                    _logger.LogWarning("Idempotency marked FAILED");
                 }
 
                 using (Telemetry.Source.StartActivity("db.rollback"))

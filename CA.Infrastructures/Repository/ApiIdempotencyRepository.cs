@@ -44,6 +44,7 @@ namespace CA.Infrastructures.Repository
             }
             catch (DbUpdateException)
             {
+                _context.Entry(entity).State = EntityState.Detached;
                 var existing = await _context.ApiIdempotencies
                     .AsNoTracking()
                     .FirstOrDefaultAsync(x => x.IdempotencyKey == key);
