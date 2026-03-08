@@ -18,7 +18,6 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.12.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
-    <!--<PackageVersion Include="OpenTelemetry.Instrumentation.AspNet" Version="1.12.0" />-->
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="8.0.0" />
     <PackageVersion Include="SharpAbp.Abp.OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="3.0.0" />
     <PackageVersion Include="Serilog.Sinks.Grafana.Loki" Version="8.0.0" />

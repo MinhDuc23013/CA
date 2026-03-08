@@ -31,16 +31,6 @@ var serviceName = "loan-service";
 //var serviceVersion = "1.0.0";
 
 
-Log.Logger = new LoggerConfiguration()
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .WriteTo.GrafanaLoki(
-        "http://localhost:3100",
-        labels: new[]
-        {
-            new LokiLabel { Key = "service", Value = "loan-service" }
-        })
-    .CreateLogger();
 
 
 var builder = WebApplication.CreateBuilder(args);

@@ -127,6 +127,9 @@ namespace CA.Application.Services
 
                 _logger.LogInformation("Loan entity created");
 
+                var traceParent = activity?.Id;
+                var traceState = activity?.TraceStateString;
+
                 using (Telemetry.Source.StartActivity("integration.email-service"))
                 {
                     await _eventPublisher.AddAsync(
@@ -137,7 +140,20 @@ namespace CA.Application.Services
                             Email = "ccc@makl.com",
                             Body = $"Your loan application with ID {loan.Id} has been created."
                         },
-                        "email-service");
+                        "email-service",
+                        traceParent!,
+                        traceState!
+                        );
+
+                    await _eventPublisher.AddKafkaEvent(
+                        new CreateLoanEventDTO
+                        {
+                            Id = loan.Id,
+                            CIF = request.CIF,
+                            Amount = request.Amount,
+                            TermMonths = request.TermMonths,
+                            Status = loan.Status
+                        });
                 }
 
                 using (Telemetry.Source.StartActivity("db.commit"))
